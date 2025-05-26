@@ -20,8 +20,8 @@ export default function About() {
         
         {/* Hero Text Overlay */}
         <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
-            <div className="mb-4">Our Story</div>
+          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+            <div className="mb-2 sm:mb-4">Our Story</div>
             <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
               Authentic Korean
             </div>
@@ -35,16 +35,16 @@ export default function About() {
       </section>
 
       {/* Main Content */}
-      <section className="relative -mt-6 z-40 bg-[#A9190F] py-32 px-4">
+      <section className="relative -mt-6 z-40 bg-[#A9190F] py-16 sm:py-32 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Story Section */}
-          <div className="bg-white rounded-xl p-12 shadow-2xl mb-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
               <div>
-                <h2 className="text-4xl font-black mb-8 uppercase text-[#A9190F]">
+                <h2 className="text-3xl sm:text-4xl font-black mb-6 sm:mb-8 uppercase text-[#A9190F]">
                   Our Story
                 </h2>
-                <div className="space-y-6 text-lg text-gray-700">
+                <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700">
                   <p>
                     Welcome to Bulgogi, Conway's premier destination for authentic Korean BBQ. 
                     Our journey began with a simple mission: to bring the rich flavors and 
@@ -60,10 +60,10 @@ export default function About() {
                 </div>
               </div>
               <div>
-                <h2 className="text-4xl font-black mb-8 uppercase text-[#A9190F]">
+                <h2 className="text-3xl sm:text-4xl font-black mb-6 sm:mb-8 uppercase text-[#A9190F]">
                   Our Philosophy
                 </h2>
-                <div className="space-y-6 text-lg text-gray-700">
+                <div className="space-y-4 sm:space-y-6 text-base sm:text-lg text-gray-700">
                   <p>
                     At Bulgogi, we believe that great food brings people together, just as 
                     breaking bread together has been a sacred tradition throughout history. 
@@ -90,11 +90,11 @@ export default function About() {
       </section>
 
       {/* White Background Section */}
-      <section className="relative bg-white py-32">
+      <section className="relative bg-white py-16 sm:py-32">
         <div className="max-w-7xl mx-auto px-4">
           {/* Family Image */}
-          <div className="bg-white rounded-xl p-4 md:p-8 lg:p-12 shadow-2xl mb-24">
-            <div className="relative w-full max-w-4xl mx-auto h-[300px] sm:h-[400px] md:h-[450px] overflow-hidden rounded-lg">
+          <div className="bg-white rounded-xl p-4 sm:p-8 lg:p-12 shadow-2xl mb-16 sm:mb-24">
+            <div className="relative w-full max-w-4xl mx-auto h-[250px] sm:h-[300px] md:h-[450px] overflow-hidden rounded-lg">
               <Image
                 src="/images/family-pic.jpg"
                 alt="Our family at Bulgogi Korean Restaurant"
@@ -103,9 +103,9 @@ export default function About() {
                 priority
               />
             </div>
-            <div className="text-center mt-4 md:mt-8">
-              <h3 className="text-xl md:text-2xl font-black text-[#A9190F] mb-2 md:mb-4">The Lee Family</h3>
-              <p className="text-base md:text-lg text-gray-700">
+            <div className="text-center mt-4 sm:mt-8">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-black text-[#A9190F] mb-2 sm:mb-4">The Lee Family</h3>
+              <p className="text-sm sm:text-base md:text-lg text-gray-700">
                 Sharing our love for Korean cuisine and Christian values with the Conway community since 2019.
               </p>
             </div>
@@ -124,33 +124,33 @@ export default function About() {
           />
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 py-48">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-24 sm:py-48">
           {/* Values Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            <div className="bg-white rounded-xl p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 bg-[#A9190F]">
-                <FaUtensils className="w-10 h-10 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-8">
+            <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
+                <FaUtensils className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black mb-4 text-[#A9190F] uppercase">Traditional Recipes</h3>
-              <p className="text-gray-700 text-lg">
+              <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Traditional Recipes</h3>
+              <p className="text-base sm:text-lg text-gray-700">
                 Authentic Korean flavors passed down through generations, crafted with care and expertise.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 bg-[#A9190F]">
-                <FaLeaf className="w-10 h-10 text-white" />
+            <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
+                <FaLeaf className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black mb-4 text-[#A9190F] uppercase">Fresh Ingredients</h3>
-              <p className="text-gray-700 text-lg">
+              <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Fresh Ingredients</h3>
+              <p className="text-base sm:text-lg text-gray-700">
                 We source only the highest quality, fresh ingredients to ensure the best dining experience.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 bg-[#A9190F]">
-                <FaStar className="w-10 h-10 text-white" />
+            <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
+                <FaStar className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-black mb-4 text-[#A9190F] uppercase">Perfect Atmosphere</h3>
-              <p className="text-gray-700 text-lg">
+              <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Perfect Atmosphere</h3>
+              <p className="text-base sm:text-lg text-gray-700">
                 Modern dining space with traditional Korean touches for an immersive experience.
               </p>
             </div>
@@ -159,19 +159,19 @@ export default function About() {
       </section>
 
       {/* White Background Section */}
-      <section className="relative bg-white py-32">
+      <section className="relative bg-white py-16 sm:py-32">
         <div className="max-w-7xl mx-auto px-4">
           {/* Call to Action */}
-          <div className="bg-white rounded-xl p-12 shadow-2xl text-center mt-6">
-            <h2 className="text-4xl font-black mb-6 uppercase text-[#A9190F]">
+          <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl text-center">
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
               Experience Korean Cuisine
             </h2>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
               Join us for an unforgettable dining experience and discover why our customers keep coming back for more.
             </p>
             <Link
               href="/order"
-              className="inline-block px-12 py-4 bg-[#A9190F] text-white text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-[#A9190F] text-white text-lg sm:text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
               Order Now
             </Link>

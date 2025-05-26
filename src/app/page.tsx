@@ -39,8 +39,8 @@ export default function Home() {
         
         {/* Hero Text Overlay */}
         <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
-            <div className="mb-4">Korean Flavor.</div>
+          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+            <div className="mb-2 sm:mb-4">Korean Flavor.</div>
             <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
               Global Obsession.
             </div>
@@ -128,20 +128,24 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="relative py-32 px-4 bg-white">
+      <section className="relative py-16 sm:py-32 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-black mb-8 uppercase text-red-600">Ready to Experience<br />Korean Cuisine?</h2>
-          <p className="text-2xl mb-12 text-gray-700">Join us for lunch or dinner, or order online for pickup/delivery</p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-8 uppercase text-red-600">
+            Ready to Experience<br />Korean Cuisine?
+          </h2>
+          <p className="text-xl sm:text-2xl mb-8 sm:mb-12 text-gray-700">
+            Join us for lunch or dinner, or order online for pickup/delivery
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
             <Link
               href="/menu"
-              className="w-full sm:w-auto px-12 py-5 text-xl font-bold rounded-lg bg-red-600 text-white uppercase transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 hover:scale-105"
+              className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold rounded-lg bg-red-600 text-white uppercase transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 hover:scale-105"
             >
               View Menu
             </Link>
             <Link
               href="/order"
-              className="w-full sm:w-auto px-12 py-5 text-xl font-bold rounded-lg bg-white text-red-600 uppercase transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 border-2 border-red-600"
+              className="w-full sm:w-auto px-8 sm:px-12 py-4 sm:py-5 text-lg sm:text-xl font-bold rounded-lg bg-white text-red-600 uppercase transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 border-2 border-red-600"
             >
               Order Now
             </Link>

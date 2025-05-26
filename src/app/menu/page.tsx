@@ -20,29 +20,29 @@ interface MenuSectionProps {
 
 function MenuSection({ id, title, items, isBestSeller }: MenuSectionProps) {
   return (
-    <section id={id} className="mb-16 scroll-mt-24">
-      <div className="flex items-center gap-3 mb-8">
-        <h2 className="text-3xl font-bold" style={{ color: theme.colors.primary }}>
+    <section id={id} className="mb-12 sm:mb-16 scroll-mt-24">
+      <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: theme.colors.primary }}>
           {title}
         </h2>
         {isBestSeller && (
           <span 
-            className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium text-white"
+            className="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-white"
             style={{ backgroundColor: theme.colors.primary }}
           >
             Popular
           </span>
         )}
       </div>
-      <div className="grid gap-6">
+      <div className="grid gap-4 sm:gap-6">
         {items.map((item) => (
           <div 
             key={item.name} 
-            className="border rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-white"
+            className="border rounded-lg p-4 sm:p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 bg-white"
           >
-            <div className="flex justify-between items-start">
-              <div>
-                <h3 className="text-xl font-semibold flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-2 sm:gap-0">
+              <div className="flex-1">
+                <h3 className="text-lg sm:text-xl font-semibold flex items-center gap-2 flex-wrap">
                   {item.name}
                   {item.isBestSeller && (
                     <span 
@@ -54,10 +54,10 @@ function MenuSection({ id, title, items, isBestSeller }: MenuSectionProps) {
                   )}
                 </h3>
                 {item.description && (
-                  <p className="text-gray-600 mt-2">{item.description}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">{item.description}</p>
                 )}
               </div>
-              <span className="text-lg font-semibold ml-4" style={{ color: theme.colors.primary }}>${item.price.toFixed(2)}</span>
+              <span className="text-base sm:text-lg font-semibold sm:ml-4 mt-1 sm:mt-0" style={{ color: theme.colors.primary }}>${item.price.toFixed(2)}</span>
             </div>
           </div>
         ))}
@@ -230,8 +230,8 @@ export default function Menu() {
           />
         </div>
         <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
-          <h1 className="text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
-            <div className="mb-4">Our Menu</div>
+          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+            <div className="mb-2 sm:mb-4">Our Menu</div>
             <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
               Korean Flavors
             </div>
@@ -245,13 +245,13 @@ export default function Menu() {
       </section>
 
       {/* Menu Content */}
-      <section className="relative -mt-6 z-40 bg-white py-32 px-4">
+      <section className="relative -mt-6 z-40 bg-white py-16 sm:py-32 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Navigation Menu */}
           <NavigationMenu sectionNames={Object.entries(sectionNames)} />
 
           {/* Menu Sections */}
-          <div className="mt-16 space-y-16">
+          <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
             <MenuSection id="appetizers" title="Appetizers" items={menuData.appetizers} />
             <MenuSection id="rice" title="Bulgogi Rice Bowl" items={menuData.riceBowls} isBestSeller={true} />
             <MenuSection id="kimchi-rice" title="Bulgogi Kimchi Fried Rice" items={menuData.kimchiRice}  />
@@ -272,16 +272,16 @@ export default function Menu() {
           </div>
 
           {/* Call to Action */}
-          <div className="mt-24 bg-white rounded-xl p-8 shadow-2xl text-center">
-            <h2 className="text-4xl font-black mb-6 uppercase text-[#A9190F]">
+          <div className="mt-16 sm:mt-24 bg-white rounded-xl p-6 sm:p-8 shadow-2xl text-center">
+            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
               Ready to Order?
             </h2>
-            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
               Experience authentic Korean cuisine through pickup or delivery.
             </p>
             <Link
               href="/order"
-              className="inline-block px-12 py-4 bg-[#A9190F] text-white text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-[#A9190F] text-white text-lg sm:text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
               Order Now
             </Link>
