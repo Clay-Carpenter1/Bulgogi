@@ -6,7 +6,7 @@ export default function Catering() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
@@ -37,7 +37,7 @@ export default function Catering() {
       <section className="relative -mt-6 z-40 bg-[#A9190F] py-16 sm:py-32 px-4">
         <div className="max-w-6xl mx-auto relative">
           {/* Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-32 sm:mb-40">
             <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
                 <FaUsers className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
@@ -83,7 +83,7 @@ export default function Catering() {
       </section>
 
       {/* White Background Section */}
-      <section className="relative bg-white py-16 sm:py-32">
+      <section className="relative bg-white pt-0 pb-16 sm:pb-32 -mt-16 sm:-mt-24">
         <div className="max-w-6xl mx-auto px-4">
           {/* Call to Action */}
           <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl text-center">

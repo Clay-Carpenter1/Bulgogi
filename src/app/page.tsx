@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
@@ -54,7 +54,7 @@ export default function Home() {
       </section>
 
       {/* Slideshow Section */}
-      <section className="relative -mt-6 z-40">
+      <section className="relative -mt-6 z-40 pb-24 sm:pb-40">
         <Slideshow slides={slides} />
         {/* Bottom White Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Featured Sections */}
-      <section className="relative -mt-6 py-32 px-4 bg-white z-10">
+      <section className="relative -mt-20 sm:-mt-32 py-20 sm:py-32 px-4 bg-white z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center p-10 rounded-xl bg-white shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-red-600">
@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Video Section */}
-      <section className="relative py-32 bg-[#A9190F] overflow-hidden">
+      <section className="relative py-16 sm:py-24 bg-[#A9190F] overflow-hidden">
         {/* Top White Diagonal */}
         <div className="absolute top-0 left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
           <div className="absolute top-0 left-0 right-0 h-full bg-white -translate-y-[50%]" />
@@ -109,7 +109,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-full bg-white translate-y-[50%]" />
         </div>
 
-        <div className="relative max-w-5xl mx-auto px-4 z-10">
+        <div className="relative max-w-5xl mx-auto px-4 z-10 py-16">
           <h2 className="text-5xl font-black mb-12 uppercase text-center text-white [text-shadow:_4px_4px_8px_rgba(0,0,0,0.3)]">
             Experience Our Cuisine
           </h2>
@@ -128,7 +128,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="relative py-16 sm:py-32 px-4 bg-white">
+      <section className="relative py-16 sm:py-32 px-4 bg-white -mt-8 sm:-mt-16">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-8 uppercase text-red-600">
             Ready to Experience<br />Korean Cuisine?

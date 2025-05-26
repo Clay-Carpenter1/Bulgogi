@@ -6,7 +6,7 @@ export default function Order() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
@@ -36,7 +36,7 @@ export default function Order() {
       {/* Main Content */}
       <section className="relative -mt-6 z-40 bg-[#A9190F] py-16 sm:py-32 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-16 sm:mb-24">
             {/* Online Order Card */}
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-2xl transform hover:scale-105 transition-all duration-300">
               <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mb-4 sm:mb-6 bg-[#A9190F]">
@@ -79,7 +79,7 @@ export default function Order() {
           </div>
 
           {/* White Diagonal Transition */}
-          <div className="absolute left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
+          <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden" style={{ height: '150px' }}>
             <div className="absolute left-0 right-0 h-full bg-white translate-y-[50%]" />
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function Order() {
       <section className="relative bg-white py-16 sm:py-32">
         <div className="max-w-6xl mx-auto px-4">
           {/* Ordering Info */}
-          <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl mb-16 sm:mb-32">
+          <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl mb-16 sm:mb-24">
             <h2 className="text-3xl sm:text-4xl font-black mb-6 sm:mb-10 text-center uppercase text-[#A9190F]">
               Ordering Information
             </h2>
@@ -114,7 +114,7 @@ export default function Order() {
           </div>
 
           {/* Red Diagonal Transition */}
-          <div className="absolute left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
+          <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden" style={{ height: '150px' }}>
             <div className="absolute left-0 right-0 h-full bg-[#A9190F] translate-y-[50%]" />
           </div>
         </div>

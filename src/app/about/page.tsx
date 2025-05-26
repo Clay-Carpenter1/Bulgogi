@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
@@ -83,7 +83,7 @@ export default function About() {
           </div>
 
           {/* First White Diagonal */}
-          <div className="absolute left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
+          <div className="absolute left-0 right-0 bottom-0 w-full overflow-hidden" style={{ height: '150px' }}>
             <div className="absolute left-0 right-0 h-full bg-white translate-y-[50%]" />
           </div>
         </div>

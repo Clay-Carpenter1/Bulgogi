@@ -219,7 +219,7 @@ export default function Menu() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
