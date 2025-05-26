@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, MouseEvent, TouchEvent } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
@@ -17,14 +17,21 @@ interface SlideshowProps {
 
 export default function Slideshow({ slides }: SlideshowProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [currentX, setCurrentX] = useState(0);
+  const slideshowRef = useRef<HTMLDivElement>(null);
+  const dragThreshold = 50; // Minimum drag distance to trigger slide change
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      if (!isDragging) {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }
     }, 10000);
 
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [slides.length, isDragging]);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -38,8 +45,106 @@ export default function Slideshow({ slides }: SlideshowProps) {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
+  // Mouse events for dragging
+  const handleMouseDown = (e: MouseEvent) => {
+    // Don't initiate drag if clicking on a button or link
+    if ((e.target as HTMLElement).tagName === 'BUTTON' || 
+        (e.target as HTMLElement).tagName === 'A' ||
+        (e.target as HTMLElement).closest('button') || 
+        (e.target as HTMLElement).closest('a')) {
+      return;
+    }
+    
+    setIsDragging(true);
+    setStartX(e.clientX);
+    setCurrentX(e.clientX);
+  };
+
+  const handleMouseMove = (e: MouseEvent) => {
+    if (isDragging) {
+      setCurrentX(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging) {
+      const dragDistance = currentX - startX;
+      
+      if (Math.abs(dragDistance) > dragThreshold) {
+        if (dragDistance > 0) {
+          goToPrevSlide();
+        } else {
+          goToNextSlide();
+        }
+      }
+      
+      setIsDragging(false);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Touch events for swiping
+  const handleTouchStart = (e: TouchEvent) => {
+    // Don't initiate swipe if touching a button or link
+    if ((e.target as HTMLElement).tagName === 'BUTTON' || 
+        (e.target as HTMLElement).tagName === 'A' ||
+        (e.target as HTMLElement).closest('button') || 
+        (e.target as HTMLElement).closest('a')) {
+      return;
+    }
+    
+    setIsDragging(true);
+    setStartX(e.touches[0].clientX);
+    setCurrentX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: TouchEvent) => {
+    if (isDragging) {
+      setCurrentX(e.touches[0].clientX);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (isDragging) {
+      const dragDistance = currentX - startX;
+      
+      if (Math.abs(dragDistance) > dragThreshold) {
+        if (dragDistance > 0) {
+          goToPrevSlide();
+        } else {
+          goToNextSlide();
+        }
+      }
+      
+      setIsDragging(false);
+    }
+  };
+
   return (
-    <div className="relative w-full bg-[#A9190F]">
+    <div 
+      className="relative w-full bg-[#A9190F]"
+      ref={slideshowRef}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onMouseUp={handleMouseUp}
+      onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+    >
+      {/* Swipeable Indicator - Only visible on mobile */}
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 md:hidden">
+        <div className="text-white/70 text-xs font-medium px-2 py-1 bg-black/20 rounded-full backdrop-blur-sm flex items-center gap-1">
+          <FaChevronLeft className="w-3 h-3" />
+          <span>Swipe</span>
+          <FaChevronRight className="w-3 h-3" />
+        </div>
+      </div>
+
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevSlide}
@@ -76,6 +181,7 @@ export default function Slideshow({ slides }: SlideshowProps) {
                     fill
                     className="object-contain drop-shadow-2xl p-4"
                     priority={index === 0}
+                    draggable={false}
                   />
                 </div>
               </div>
@@ -98,6 +204,13 @@ export default function Slideshow({ slides }: SlideshowProps) {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Swipe Indicator */}
+      <div className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-opacity duration-300 ${isDragging ? 'opacity-80' : 'opacity-0'}`}>
+        <div className="text-white text-sm font-medium px-3 py-1 bg-black/40 rounded-full backdrop-blur-sm whitespace-nowrap">
+          {Math.abs(currentX - startX) < 10 ? 'Drag to navigate' : currentX - startX > 0 ? '← Previous slide' : 'Next slide →'}
+        </div>
       </div>
 
       {/* Slide Indicators */}
