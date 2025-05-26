@@ -3,6 +3,8 @@ import Image from 'next/image';
 import NavigationMenu from './NavigationMenu';
 import BackToTopButton from './BackToTopButton';
 import Link from 'next/link';
+import AnimatedSection from '@/components/animations/AnimatedSection';
+import FadeIn from '@/components/animations/FadeIn';
 
 interface MenuItem {
   name: string;
@@ -229,14 +231,14 @@ export default function Menu() {
             priority
           />
         </div>
-        <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
+        <FadeIn className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4" duration={1.2}>
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
             <div className="mb-2 sm:mb-4">Our Menu</div>
             <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
               Korean Flavors
             </div>
           </h1>
-        </div>
+        </FadeIn>
 
         {/* Bottom White Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
@@ -248,44 +250,82 @@ export default function Menu() {
       <section className="relative -mt-6 z-40 bg-white py-16 sm:py-32 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Navigation Menu */}
-          <NavigationMenu sectionNames={Object.entries(sectionNames)} />
+          <FadeIn delay={0.3}>
+            <NavigationMenu sectionNames={Object.entries(sectionNames)} />
+          </FadeIn>
 
           {/* Menu Sections */}
           <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
-            <MenuSection id="appetizers" title="Appetizers" items={menuData.appetizers} />
-            <MenuSection id="rice" title="Bulgogi Rice Bowl" items={menuData.riceBowls} isBestSeller={true} />
-            <MenuSection id="kimchi-rice" title="Bulgogi Kimchi Fried Rice" items={menuData.kimchiRice}  />
-            <MenuSection id="noodles" title="Bulgogi Stir Fried Noodle Bowl" items={menuData.noodleBowls} isBestSeller={true} />
-            <MenuSection id="kimbap" title="Kimbap" items={menuData.kimbap} isBestSeller={true} />
-            <MenuSection id="cheesesteak" title="Korean Cheesesteak Sandwich" items={menuData.koreanCheesesteak} isBestSeller={true} />
-            <MenuSection id="fries" title="Korean Cheesesteak Fries" items={menuData.cheesesteakFries} />
-            <MenuSection id="ramen" title="Korean Ramen Bowls" items={menuData.koreanRamen} isBestSeller={true} />
-            <MenuSection id="low-carb" title="Bulgogi Low Carb Bowl" items={menuData.lowCarbBowls} />
-            <MenuSection id="sesame-chicken" title="Sesame Chicken" items={menuData.sesameChicken} isBestSeller={true} />
-            <MenuSection id="sesame-shrimp" title="Sesame Shrimp" items={menuData.sesameShrimp} />
-            <MenuSection id="tacos" title="Korean Street Tacos" items={menuData.koreanStreetTacos} />
-            <MenuSection id="kids" title="Kids Meal" items={menuData.kidsMeal} />
-            <MenuSection id="vegetarian" title="Vegetarian Bowl" items={menuData.vegetarianBowl} isBestSeller={true} />
-            <MenuSection id="sides" title="Sides" items={menuData.sides} />
-            <MenuSection id="dessert" title="Dessert" items={menuData.dessert} isBestSeller={true} />
-            <MenuSection id="drinks" title="Drinks" items={menuData.drinks} />
+            <AnimatedSection direction="up">
+              <MenuSection id="appetizers" title="Appetizers" items={menuData.appetizers} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="rice" title="Bulgogi Rice Bowl" items={menuData.riceBowls} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="kimchi-rice" title="Bulgogi Kimchi Fried Rice" items={menuData.kimchiRice}  />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="noodles" title="Bulgogi Stir Fried Noodle Bowl" items={menuData.noodleBowls} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="kimbap" title="Kimbap" items={menuData.kimbap} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="cheesesteak" title="Korean Cheesesteak Sandwich" items={menuData.koreanCheesesteak} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="fries" title="Korean Cheesesteak Fries" items={menuData.cheesesteakFries} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="ramen" title="Korean Ramen Bowls" items={menuData.koreanRamen} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="low-carb" title="Bulgogi Low Carb Bowl" items={menuData.lowCarbBowls} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="sesame-chicken" title="Sesame Chicken" items={menuData.sesameChicken} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="sesame-shrimp" title="Sesame Shrimp" items={menuData.sesameShrimp} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="tacos" title="Korean Street Tacos" items={menuData.koreanStreetTacos} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="kids" title="Kids Meal" items={menuData.kidsMeal} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="vegetarian" title="Vegetarian Bowl" items={menuData.vegetarianBowl} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="sides" title="Sides" items={menuData.sides} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="dessert" title="Dessert" items={menuData.dessert} isBestSeller={true} />
+            </AnimatedSection>
+            <AnimatedSection direction="up">
+              <MenuSection id="drinks" title="Drinks" items={menuData.drinks} />
+            </AnimatedSection>
           </div>
 
           {/* Call to Action */}
-          <div className="mt-16 sm:mt-24 bg-white rounded-xl p-6 sm:p-8 shadow-2xl text-center">
-            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
-              Ready to Order?
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
-              Experience authentic Korean cuisine through pickup or delivery.
-            </p>
-            <Link
-              href="/order"
-              className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-[#A9190F] text-white text-lg sm:text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
-              Order Now
-            </Link>
-          </div>
+          <AnimatedSection direction="up" className="mt-16 sm:mt-24">
+            <div className="bg-white rounded-xl p-6 sm:p-8 shadow-2xl text-center">
+              <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
+                Ready to Order?
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
+                Experience authentic Korean cuisine through pickup or delivery.
+              </p>
+              <Link
+                href="/order"
+                className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-[#A9190F] text-white text-lg sm:text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Order Now
+              </Link>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

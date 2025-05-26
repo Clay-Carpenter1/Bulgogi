@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { FaPhone, FaCalendarAlt, FaUsers, FaClock } from 'react-icons/fa';
 import BackToTopButton from '../menu/BackToTopButton';
+import AnimatedSection from '@/components/animations/AnimatedSection';
+import FadeIn from '@/components/animations/FadeIn';
 
 export default function Catering() {
   return (
@@ -18,14 +20,14 @@ export default function Catering() {
         </div>
         
         {/* Hero Text Overlay */}
-        <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
+        <FadeIn className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4" duration={1.2}>
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
             <div className="mb-2 sm:mb-4">Catering</div>
             <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
               For Any Event
             </div>
           </h1>
-        </div>
+        </FadeIn>
 
         {/* Bottom Red Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
@@ -38,41 +40,47 @@ export default function Catering() {
         <div className="max-w-6xl mx-auto relative">
           {/* Info Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-32 sm:mb-40">
-            <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
-                <FaUsers className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+            <AnimatedSection direction="up" delay={0.1}>
+              <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+                <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
+                  <FaUsers className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Perfect For</h3>
+                <p className="text-base sm:text-lg text-gray-700">
+                  Corporate Events<br />
+                  Weddings<br />
+                  Family Gatherings<br />
+                  Special Occasions
+                </p>
               </div>
-              <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Perfect For</h3>
-              <p className="text-base sm:text-lg text-gray-700">
-                Corporate Events<br />
-                Weddings<br />
-                Family Gatherings<br />
-                Special Occasions
-              </p>
-            </div>
+            </AnimatedSection>
 
-            <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
-                <FaCalendarAlt className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+            <AnimatedSection direction="up" delay={0.3}>
+              <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+                <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
+                  <FaCalendarAlt className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Advance Notice</h3>
+                <p className="text-base sm:text-lg text-gray-700">
+                  Please place your order<br />
+                  at least 48 hours<br />
+                  in advance
+                </p>
               </div>
-              <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Advance Notice</h3>
-              <p className="text-base sm:text-lg text-gray-700">
-                Please place your order<br />
-                at least 48 hours<br />
-                in advance
-              </p>
-            </div>
+            </AnimatedSection>
 
-            <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
-                <FaClock className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+            <AnimatedSection direction="up" delay={0.5}>
+              <div className="bg-white rounded-xl p-6 sm:p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+                <div className="flex items-center justify-center w-16 sm:w-20 h-16 sm:h-20 rounded-full mx-auto mb-4 sm:mb-6 bg-[#A9190F]">
+                  <FaClock className="w-8 sm:w-10 h-8 sm:h-10 text-white" />
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Hours</h3>
+                <p className="text-base sm:text-lg text-gray-700">
+                  Monday - Saturday<br />
+                  11:00 AM - 8:30 PM
+                </p>
               </div>
-              <h3 className="text-xl sm:text-2xl font-black mb-3 sm:mb-4 text-[#A9190F] uppercase">Hours</h3>
-              <p className="text-base sm:text-lg text-gray-700">
-                Monday - Saturday<br />
-                11:00 AM - 8:30 PM
-              </p>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
 
@@ -86,26 +94,28 @@ export default function Catering() {
       <section className="relative bg-white pt-0 pb-16 sm:pb-32 -mt-16 sm:-mt-24">
         <div className="max-w-6xl mx-auto px-4">
           {/* Call to Action */}
-          <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl text-center">
-            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
-              Ready to Place Your Order?
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
-              Call us to discuss your catering needs. Our team will help you create the perfect menu for your event.
-            </p>
-            <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6">
-              <a
-                href="tel:+15013585923"
-                className="inline-flex items-center px-8 sm:px-12 py-4 sm:py-6 bg-[#A9190F] text-white text-xl sm:text-2xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-              >
-                <FaPhone className="w-6 h-6 sm:w-8 sm:h-8 mr-3 sm:mr-4" />
-                (501) 358-5923
-              </a>
-              <p className="text-gray-600 text-base sm:text-lg italic">
-                Please call during business hours to speak with our catering specialist
+          <AnimatedSection direction="up">
+            <div className="bg-white rounded-xl p-6 sm:p-12 shadow-2xl text-center">
+              <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
+                Ready to Place Your Order?
+              </h2>
+              <p className="text-lg sm:text-xl text-gray-700 mb-6 sm:mb-8 max-w-3xl mx-auto">
+                Call us to discuss your catering needs. Our team will help you create the perfect menu for your event.
               </p>
+              <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6">
+                <a
+                  href="tel:+15013585923"
+                  className="inline-flex items-center px-8 sm:px-12 py-4 sm:py-6 bg-[#A9190F] text-white text-xl sm:text-2xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                >
+                  <FaPhone className="w-6 h-6 sm:w-8 sm:h-8 mr-3 sm:mr-4" />
+                  (501) 358-5923
+                </a>
+                <p className="text-gray-600 text-base sm:text-lg italic">
+                  Please call during business hours to speak with our catering specialist
+                </p>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 

@@ -148,14 +148,14 @@ export default function Slideshow({ slides }: SlideshowProps) {
       {/* Navigation Arrows */}
       <button
         onClick={goToPrevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 text-white hover:text-white/75 transition-colors"
+        className="absolute left-4 md:left-8 top-[62%] -translate-y-1/2 z-30 text-white hover:text-white/75 transition-colors"
         aria-label="Previous slide"
       >
         <FaChevronLeft className="w-8 h-8 md:w-12 md:h-12 drop-shadow-lg" />
       </button>
       <button
         onClick={goToNextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 text-white hover:text-white/75 transition-colors"
+        className="absolute right-4 md:right-8 top-[62%] -translate-y-1/2 z-30 text-white hover:text-white/75 transition-colors"
         aria-label="Next slide"
       >
         <FaChevronRight className="w-8 h-8 md:w-12 md:h-12 drop-shadow-lg" />
