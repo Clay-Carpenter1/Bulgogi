@@ -1,0 +1,185 @@
+import Image from 'next/image';
+import BackToTopButton from '../menu/BackToTopButton';
+import { FaUtensils, FaLeaf, FaStar } from 'react-icons/fa';
+import Link from 'next/link';
+
+export default function About() {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative h-[70vh] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/MenuImg.png"
+            alt="Korean dishes spread"
+            fill
+            className="object-cover brightness-[0.85]"
+            priority
+          />
+        </div>
+        
+        {/* Hero Text Overlay */}
+        <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
+          <h1 className="text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+            <div className="mb-4">Our Story</div>
+            <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
+              Authentic Korean
+            </div>
+          </h1>
+        </div>
+
+        {/* Bottom Red Diagonal */}
+        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] transform -skew-y-3 translate-y-[50%]" />
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="relative -mt-6 z-40 bg-[#A9190F] py-32 px-4">
+        <div className="max-w-7xl mx-auto">
+          {/* Story Section */}
+          <div className="bg-white rounded-xl p-12 shadow-2xl mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              <div>
+                <h2 className="text-4xl font-black mb-8 uppercase text-[#A9190F]">
+                  Our Story
+                </h2>
+                <div className="space-y-6 text-lg text-gray-700">
+                  <p>
+                    Welcome to Bulgogi, Conway's premier destination for authentic Korean BBQ. 
+                    Our journey began with a simple mission: to bring the rich flavors and 
+                    traditions of Korean cuisine to Arkansas, while serving our community with 
+                    love and gratitude.
+                  </p>
+                  <p>
+                    Founded by a family of Korean culinary experts who are guided by faith, 
+                    we take pride in serving dishes that have been perfected through generations. 
+                    Each recipe tells a story of our heritage and passion for authentic Korean 
+                    flavors, prepared with care and thanksgiving.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <h2 className="text-4xl font-black mb-8 uppercase text-[#A9190F]">
+                  Our Philosophy
+                </h2>
+                <div className="space-y-6 text-lg text-gray-700">
+                  <p>
+                    At Bulgogi, we believe that great food brings people together, just as 
+                    breaking bread together has been a sacred tradition throughout history. 
+                    Our restaurant is more than just a place to eat – it's a place where 
+                    families and friends can gather to share delicious meals, create lasting 
+                    memories, and experience the blessing of community.
+                  </p>
+                  <p>
+                    We are committed to being good stewards of our resources, using only the 
+                    finest ingredients, preparing our marinades fresh daily, and maintaining 
+                    the highest standards of service and cleanliness. Through our work, we 
+                    strive to reflect values of hospitality, generosity, and gratitude.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* First White Diagonal */}
+          <div className="absolute left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
+            <div className="absolute left-0 right-0 h-full bg-white transform -skew-y-3 translate-y-[50%]" />
+          </div>
+        </div>
+      </section>
+
+      {/* White Background Section */}
+      <section className="relative bg-white py-32">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Family Image */}
+          <div className="bg-white rounded-xl p-4 md:p-8 lg:p-12 shadow-2xl mb-24">
+            <div className="relative w-full max-w-4xl mx-auto h-[300px] sm:h-[400px] md:h-[450px] overflow-hidden rounded-lg">
+              <Image
+                src="/images/family-pic.jpg"
+                alt="Our family at Bulgogi Korean Restaurant"
+                fill
+                className="object-cover object-[center_20%]"
+                priority
+              />
+            </div>
+            <div className="text-center mt-4 md:mt-8">
+              <h3 className="text-xl md:text-2xl font-black text-[#A9190F] mb-2 md:mb-4">The Lee Family</h3>
+              <p className="text-base md:text-lg text-gray-700">
+                Sharing our love for Korean cuisine and Christian values with the Conway community since 2019.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Second Red Section with Diagonal */}
+      <section className="relative">
+        {/* Red Background with Diagonal Cuts */}
+        <div className="absolute inset-0 w-full h-full">
+          <div className="w-full h-full bg-[#A9190F] transform origin-top-left" 
+            style={{ 
+              clipPath: 'polygon(0 20%, 100% 0, 100% 85%, 0 100%)'
+            }} 
+          />
+        </div>
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 py-48">
+          {/* Values Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div className="bg-white rounded-xl p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 bg-[#A9190F]">
+                <FaUtensils className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-[#A9190F] uppercase">Traditional Recipes</h3>
+              <p className="text-gray-700 text-lg">
+                Authentic Korean flavors passed down through generations, crafted with care and expertise.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 bg-[#A9190F]">
+                <FaLeaf className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-[#A9190F] uppercase">Fresh Ingredients</h3>
+              <p className="text-gray-700 text-lg">
+                We source only the highest quality, fresh ingredients to ensure the best dining experience.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-10 shadow-2xl text-center transform hover:scale-105 transition-all duration-300">
+              <div className="flex items-center justify-center w-20 h-20 rounded-full mx-auto mb-6 bg-[#A9190F]">
+                <FaStar className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-[#A9190F] uppercase">Perfect Atmosphere</h3>
+              <p className="text-gray-700 text-lg">
+                Modern dining space with traditional Korean touches for an immersive experience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* White Background Section */}
+      <section className="relative bg-white py-32">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Call to Action */}
+          <div className="bg-white rounded-xl p-12 shadow-2xl text-center mt-6">
+            <h2 className="text-4xl font-black mb-6 uppercase text-[#A9190F]">
+              Experience Korean Cuisine
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
+              Join us for an unforgettable dining experience and discover why our customers keep coming back for more.
+            </p>
+            <Link
+              href="/order"
+              className="inline-block px-12 py-4 bg-[#A9190F] text-white text-xl font-bold rounded-lg hover:bg-[#8a1410] transition-colors uppercase tracking-wide shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+            >
+              Order Now
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <BackToTopButton />
+    </div>
+  );
+} 
