@@ -4,10 +4,15 @@ import { FaUtensils, FaLeaf, FaStar } from 'react-icons/fa';
 import Link from 'next/link';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import FadeIn from '@/components/animations/FadeIn';
+import WhiteSplatter from '@/components/WhiteSplatter';
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Background Splatters - Positioned away from hero section */}
+      <WhiteSplatter className="top-[100vh] -right-32" zIndex={1} opacity={0.15} />
+      <WhiteSplatter className="top-[150vh] -left-32" zIndex={1} opacity={0.2} />
+      
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
@@ -38,6 +43,10 @@ export default function About() {
 
       {/* Main Content */}
       <section className="relative -mt-6 z-40 bg-[#A9190F] py-16 sm:py-32 px-4">
+        <WhiteSplatter className="top-1/3 right-0" zIndex={5} opacity={0.2} invert={true} />
+        <WhiteSplatter className="bottom-1/4 left-0" zIndex={5} opacity={0.15} />
+        <WhiteSplatter className="top-2/3 -right-40" zIndex={5} opacity={0.25} />
+        
         <div className="max-w-7xl mx-auto">
           {/* Story Section */}
           <AnimatedSection direction="up">
@@ -95,6 +104,8 @@ export default function About() {
 
       {/* White Background Section */}
       <section className="relative bg-white py-16 sm:py-32">
+        <WhiteSplatter className="top-1/4 -left-32" zIndex={5} opacity={0.15} />
+        
         <div className="max-w-7xl mx-auto px-4">
           {/* Family Image */}
           <AnimatedSection direction="up">
@@ -121,6 +132,12 @@ export default function About() {
 
       {/* Second Red Section with Diagonal */}
       <section className="relative">
+        {/* Background Splatters */}
+        <WhiteSplatter className="top-1/2 -translate-y-1/2 -right-32" zIndex={15} opacity={0.2} invert={true} />
+        <WhiteSplatter className="top-1/4 left-0" zIndex={15} opacity={0.15} />
+        <WhiteSplatter className="bottom-1/4 -right-40" zIndex={15} opacity={0.25} />
+        <WhiteSplatter className="bottom-1/3 -left-32" zIndex={15} opacity={0.2} invert={true} />
+        
         {/* Red Background with Diagonal Cuts */}
         <div className="absolute inset-0 w-full h-full">
           <div className="w-full h-full bg-[#A9190F] origin-top-left" 
@@ -174,6 +191,8 @@ export default function About() {
 
       {/* White Background Section */}
       <section className="relative bg-white py-16 sm:py-32">
+        <WhiteSplatter className="bottom-1/4 right-0" zIndex={5} opacity={0.15} />
+        
         <div className="max-w-7xl mx-auto px-4">
           {/* Call to Action */}
           <AnimatedSection direction="up">

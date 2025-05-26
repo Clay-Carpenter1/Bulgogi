@@ -5,6 +5,7 @@ import BackToTopButton from './BackToTopButton';
 import Link from 'next/link';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import FadeIn from '@/components/animations/FadeIn';
+import WhiteSplatter from '@/components/WhiteSplatter';
 
 interface MenuItem {
   name: string;
@@ -219,7 +220,12 @@ const menuData: Record<string, MenuItem[]> = {
 
 export default function Menu() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Background Splatters - Positioned away from hero section */}
+      <WhiteSplatter className="top-[100vh] -right-32" zIndex={1} opacity={0.15} />
+      <WhiteSplatter className="top-[150vh] -left-32" zIndex={1} opacity={0.2} />
+      <WhiteSplatter className="bottom-96 right-0" zIndex={1} opacity={0.15} invert={true} />
+      
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
@@ -248,6 +254,9 @@ export default function Menu() {
 
       {/* Menu Content */}
       <section className="relative -mt-6 z-40 bg-white py-16 sm:py-32 px-4">
+        <WhiteSplatter className="top-1/3 right-0" zIndex={5} opacity={0.2} />
+        <WhiteSplatter className="bottom-1/4 -left-32" zIndex={5} opacity={0.15} invert={true} />
+        
         <div className="max-w-7xl mx-auto">
           {/* Navigation Menu */}
           <FadeIn delay={0.3}>

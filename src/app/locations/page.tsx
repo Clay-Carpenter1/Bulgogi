@@ -3,10 +3,16 @@ import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaCar } from 'react-icons/fa';
 import BackToTopButton from '../menu/BackToTopButton';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import FadeIn from '@/components/animations/FadeIn';
+import WhiteSplatter from '@/components/WhiteSplatter';
 
 export default function Locations() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Background Splatters - Positioned away from hero section */}
+      <WhiteSplatter className="top-[100vh] -right-32" zIndex={1} opacity={0.15} />
+      <WhiteSplatter className="top-[150vh] -left-32" zIndex={1} opacity={0.2} />
+      <WhiteSplatter className="bottom-96 right-0" zIndex={1} opacity={0.15} invert={true} />
+      
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
@@ -37,6 +43,11 @@ export default function Locations() {
 
       {/* Main Content */}
       <section className="relative -mt-6 z-40 bg-[#A9190F] py-16 sm:py-32 px-4">
+        <WhiteSplatter className="top-1/4 right-0" zIndex={5} opacity={0.2} invert={true} />
+        <WhiteSplatter className="bottom-1/3 left-0" zIndex={5} opacity={0.15} />
+        <WhiteSplatter className="top-2/3 -right-40" zIndex={5} opacity={0.25} />
+        <WhiteSplatter className="top-1/2 -left-32" zIndex={5} opacity={0.2} />
+        
         <div className="max-w-6xl mx-auto">
           {/* Location Card */}
           <AnimatedSection direction="up">
@@ -147,6 +158,8 @@ export default function Locations() {
 
       {/* White Background Section */}
       <section className="relative bg-white py-16 sm:py-24">
+        <WhiteSplatter className="bottom-1/4 -left-32" zIndex={5} opacity={0.15} />
+        
         <div className="max-w-6xl mx-auto px-4">
           {/* Call to Action */}
           <AnimatedSection direction="up">

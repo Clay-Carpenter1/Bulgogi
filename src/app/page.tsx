@@ -5,6 +5,7 @@ import BackToTopButton from './menu/BackToTopButton';
 import Slideshow from '@/components/Slideshow';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import FadeIn from '@/components/animations/FadeIn';
+import WhiteSplatter from '@/components/WhiteSplatter';
 
 export default function Home() {
   const slides = [
@@ -26,7 +27,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Background Splatters - Positioned away from hero section */}
+      <WhiteSplatter className="top-[100vh] -left-32" zIndex={1} opacity={0.15} />
+      <WhiteSplatter className="bottom-96 -right-32" zIndex={1} opacity={0.2} invert={true} />
+      <WhiteSplatter className="top-[120vh] left-0" zIndex={1} opacity={0.1} />
+      
       {/* Hero Section */}
       <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
@@ -66,6 +72,8 @@ export default function Home() {
 
       {/* Featured Sections */}
       <section className="relative -mt-20 sm:-mt-32 py-20 sm:py-32 px-4 bg-white z-10">
+        <WhiteSplatter className="top-1/2 -translate-y-1/2 -left-48" zIndex={5} opacity={0.15} />
+        
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <AnimatedSection direction="up" delay={0.1}>
@@ -114,6 +122,11 @@ export default function Home() {
           <div className="absolute top-0 left-0 right-0 h-full bg-white -translate-y-[50%]" />
         </div>
 
+        {/* White Splatters in Red Section */}
+        <WhiteSplatter className="top-1/3 left-0" zIndex={5} opacity={0.2} />
+        <WhiteSplatter className="bottom-1/3 -right-32" zIndex={5} opacity={0.25} invert={true} />
+        <WhiteSplatter className="top-2/3 -left-40" zIndex={5} opacity={0.15} invert={true} />
+
         {/* Bottom White Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
           <div className="absolute bottom-0 left-0 right-0 h-full bg-white translate-y-[50%]" />
@@ -144,6 +157,8 @@ export default function Home() {
 
       {/* Call to Action */}
       <section className="relative py-16 sm:py-32 px-4 bg-white -mt-8 sm:-mt-16">
+        <WhiteSplatter className="bottom-0 right-0" zIndex={5} opacity={0.25} invert={true} />
+        
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection direction="up">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-8 uppercase text-red-600">
