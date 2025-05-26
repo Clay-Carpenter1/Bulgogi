@@ -14,13 +14,13 @@ export default function FadeIn({
   children,
   className = '',
   delay = 0,
-  duration = 0.5
+  duration = 0.4
 }: FadeInProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "0px 0px -200px 0px" }}
       transition={{ 
         duration: duration, 
         delay: delay,
