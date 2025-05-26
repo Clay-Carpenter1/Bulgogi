@@ -30,7 +30,7 @@ export default function About() {
 
         {/* Bottom Red Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] transform -skew-y-3 translate-y-[50%]" />
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] translate-y-[50%]" />
         </div>
       </section>
 
@@ -84,7 +84,7 @@ export default function About() {
 
           {/* First White Diagonal */}
           <div className="absolute left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
-            <div className="absolute left-0 right-0 h-full bg-white transform -skew-y-3 translate-y-[50%]" />
+            <div className="absolute left-0 right-0 h-full bg-white translate-y-[50%]" />
           </div>
         </div>
       </section>
@@ -117,9 +117,9 @@ export default function About() {
       <section className="relative">
         {/* Red Background with Diagonal Cuts */}
         <div className="absolute inset-0 w-full h-full">
-          <div className="w-full h-full bg-[#A9190F] transform origin-top-left" 
+          <div className="w-full h-full bg-[#A9190F] origin-top-left" 
             style={{ 
-              clipPath: 'polygon(0 20%, 100% 0, 100% 85%, 0 100%)'
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
             }} 
           />
         </div>

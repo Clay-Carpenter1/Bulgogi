@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <nav className="fixed w-full z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Left Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 relative z-10">
             <Link 
               href="/" 
               className="text-gray-900 hover:text-[#A9190F] font-medium uppercase tracking-wide text-sm transition-colors"
@@ -44,21 +44,21 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="block relative">
+          <div className="flex-shrink-0 absolute left-1/2 transform -translate-x-1/2 z-0">
+            <div className="block relative">
               <Image
                 src="/images/logo-name-no-bowl.png"
                 alt="Bulgogi Logo"
                 width={180}
                 height={180}
-                className="transform translate-y-10 hover:scale-105 transition-transform duration-200 drop-shadow-lg"
+                className="transform translate-y-8 drop-shadow-lg"
                 priority
               />
-            </Link>
+            </div>
           </div>
 
           {/* Right Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 relative z-10">
             <Link 
               href="/catering" 
               className="text-gray-900 hover:text-[#A9190F] font-medium uppercase tracking-wide text-sm transition-colors"
@@ -74,7 +74,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden relative z-10">
             <button
               onClick={toggleMobileMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-[#A9190F]"

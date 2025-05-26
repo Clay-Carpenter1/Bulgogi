@@ -240,7 +240,7 @@ export default function Menu() {
 
         {/* Bottom White Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 h-full bg-white transform -skew-y-3 translate-y-[50%]" />
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-white translate-y-[50%]" />
         </div>
       </section>
 

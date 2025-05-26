@@ -29,7 +29,7 @@ export default function Catering() {
 
         {/* Bottom Red Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] transform -skew-y-3 translate-y-[50%]" />
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] translate-y-[50%]" />
         </div>
       </section>
 
@@ -78,7 +78,7 @@ export default function Catering() {
 
         {/* Red to White Diagonal Transition */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 w-full h-[200%] bg-white transform -skew-y-3 origin-bottom-right translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 right-0 w-full h-[200%] bg-white origin-bottom-right translate-y-1/2" />
         </div>
       </section>
 

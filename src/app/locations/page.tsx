@@ -29,7 +29,7 @@ export default function Locations() {
 
         {/* Bottom Red Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] transform -skew-y-3 translate-y-[50%]" />
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] translate-y-[50%]" />
         </div>
       </section>
 
@@ -129,7 +129,7 @@ export default function Locations() {
 
         {/* Bottom White Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 h-full bg-white transform -skew-y-3 translate-y-[50%]" />
+          <div className="absolute bottom-0 left-0 right-0 h-full bg-white translate-y-[50%]" />
         </div>
       </section>
 
