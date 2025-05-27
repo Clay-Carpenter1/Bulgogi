@@ -3,8 +3,6 @@ import Image from 'next/image';
 import NavigationMenu from './NavigationMenu';
 import BackToTopButton from './BackToTopButton';
 import Link from 'next/link';
-import AnimatedSection from '@/components/animations/AnimatedSection';
-import FadeIn from '@/components/animations/FadeIn';
 import WhiteSplatter from '@/components/WhiteSplatter';
 
 interface MenuItem {
@@ -237,14 +235,14 @@ export default function Menu() {
             priority
           />
         </div>
-        <FadeIn className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4" duration={1.2}>
+        <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
             <div className="mb-2 sm:mb-4">Our Menu</div>
             <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
               Korean Flavors
             </div>
           </h1>
-        </FadeIn>
+        </div>
 
         {/* Bottom White Diagonal */}
         <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
@@ -259,67 +257,67 @@ export default function Menu() {
         
         <div className="max-w-7xl mx-auto">
           {/* Navigation Menu */}
-          <FadeIn delay={0.3}>
+          <div>
             <NavigationMenu sectionNames={Object.entries(sectionNames)} />
-          </FadeIn>
+          </div>
 
           {/* Menu Sections */}
           <div className="mt-12 sm:mt-16 space-y-12 sm:space-y-16">
-            <AnimatedSection direction="up">
+            <div>
               <MenuSection id="appetizers" title="Appetizers" items={menuData.appetizers} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="rice" title="Bulgogi Rice Bowl" items={menuData.riceBowls} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="kimchi-rice" title="Bulgogi Kimchi Fried Rice" items={menuData.kimchiRice}  />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="noodles" title="Bulgogi Stir Fried Noodle Bowl" items={menuData.noodleBowls} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="kimbap" title="Kimbap" items={menuData.kimbap} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="cheesesteak" title="Korean Cheesesteak Sandwich" items={menuData.koreanCheesesteak} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="fries" title="Korean Cheesesteak Fries" items={menuData.cheesesteakFries} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="ramen" title="Korean Ramen Bowls" items={menuData.koreanRamen} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="low-carb" title="Bulgogi Low Carb Bowl" items={menuData.lowCarbBowls} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="sesame-chicken" title="Sesame Chicken" items={menuData.sesameChicken} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="sesame-shrimp" title="Sesame Shrimp" items={menuData.sesameShrimp} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="tacos" title="Korean Street Tacos" items={menuData.koreanStreetTacos} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="kids" title="Kids Meal" items={menuData.kidsMeal} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="vegetarian" title="Vegetarian Bowl" items={menuData.vegetarianBowl} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="sides" title="Sides" items={menuData.sides} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="dessert" title="Dessert" items={menuData.dessert} isBestSeller={true} />
-            </AnimatedSection>
-            <AnimatedSection direction="up">
+            </div>
+            <div>
               <MenuSection id="drinks" title="Drinks" items={menuData.drinks} />
-            </AnimatedSection>
+            </div>
           </div>
 
           {/* Call to Action */}
-          <AnimatedSection direction="up" className="mt-16 sm:mt-24">
+          <div className="mt-16 sm:mt-24">
             <div className="bg-white rounded-xl p-6 sm:p-8 shadow-2xl text-center">
               <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 uppercase text-[#A9190F]">
                 Ready to Order?
@@ -334,7 +332,7 @@ export default function Menu() {
                 Order Now
               </Link>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 
