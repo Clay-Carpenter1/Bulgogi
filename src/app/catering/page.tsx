@@ -4,6 +4,7 @@ import BackToTopButton from '../menu/BackToTopButton';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import FadeIn from '@/components/animations/FadeIn';
 import WhiteSplatter from '@/components/WhiteSplatter';
+import WavePattern from '@/components/WavePattern';
 
 export default function Catering() {
   return (
@@ -34,10 +35,12 @@ export default function Catering() {
           </h1>
         </FadeIn>
 
-        {/* Bottom Red Diagonal */}
-        <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden z-30" style={{ height: '150px' }}>
-          <div className="absolute bottom-0 left-0 right-0 h-full bg-[#A9190F] translate-y-[50%]" />
-        </div>
+        {/* Bottom Red Diagonal with Wave Pattern */}
+        <WavePattern 
+          fromColor="#FFFFFF" 
+          toColor="bg-[#A9190F]" 
+          position="bottom" 
+        />
       </section>
 
       {/* Main Content */}
