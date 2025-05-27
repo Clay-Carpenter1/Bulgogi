@@ -12,17 +12,17 @@ export default function Home() {
   const slides = [
     {
       title: "Noodle Bowl",
-      description: "Our signature marinated beef served over udon noodles and vegetables",
+      description: "Our signature marinated proteins served over udon noodles and vegetables",
       image: "/images/dishes/bulgogi-bowl.jpg"
     },
     {
-      title: "Kimchi Fried Rice",
-      description: "House-made kimchi stir-fried with rice and vegetables",
+      title: "Bulgogi Rice Bowl",
+      description: "Traditional Korean mixed rice with assorted vegetables, egg, and marinated protein",
       image: "/images/dishes/kimchi-rice.jpg"
     },
     {
       title: "Korean Ramen",
-      description: "Spicy noodle soup with fresh vegetables and protein",
+      description: "Spicy or Non-Spicy noodle soup with fresh vegetables and protein",
       image: "/images/dishes/korean-ramen.jpg"
     }
   ];
@@ -35,7 +35,7 @@ export default function Home() {
       <WhiteSplatter className="top-[120vh] left-0" zIndex={1} opacity={0.1} />
       
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden mt-24">
+      <section className="relative h-[80vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
@@ -47,14 +47,16 @@ export default function Home() {
         </div>
         
         {/* Hero Text Overlay */}
-        <FadeIn className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4" duration={1.2}>
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
-            <div className="mb-2 sm:mb-4">Korean Flavor.</div>
-            <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
-              Global Obsession.
-            </div>
-          </h1>
-        </FadeIn>
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <FadeIn className="px-4 w-full -translate-y-12" duration={1.2}>
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none text-white [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+              <div className="mb-2 sm:mb-4">Korean Flavor.</div>
+              <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
+                Global Obsession.
+              </div>
+            </h1>
+          </FadeIn>
+        </div>
 
         {/* Bottom White Diagonal with Wave Pattern */}
         <WavePattern 

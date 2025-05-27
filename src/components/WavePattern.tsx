@@ -29,7 +29,7 @@ export default function WavePattern({
       {/* Main diagonal background */}
       <div className={`absolute ${position}-0 left-0 right-0 h-full ${toColor} ${transformValue}`} />
       
-      {/* Improved wave pattern with required transparency levels */}
+      {/* Natural water-like wave patterns */}
       <div className={`absolute ${isBottom ? 'bottom-[75px]' : 'top-[75px]'} left-0 right-0 h-[60px] z-40`}>
         <svg className={`absolute ${position}-0 w-full h-full`} viewBox="0 0 1200 60" preserveAspectRatio="none">
           <defs>
@@ -52,29 +52,34 @@ export default function WavePattern({
             </linearGradient>
           </defs>
           
-          {/* Top wave - 75% transparent - improved curve */}
+          {/* Top wave - 75% transparent - water-like wave */}
           <path 
-            d={`M0,${isBottom ? 0 : 60} 
-                C200,${isBottom ? 30 : 30} 400,${isBottom ? 10 : 50} 600,${isBottom ? 20 : 40} 
-                C800,${isBottom ? 10 : 50} 1000,${isBottom ? 25 : 35} 1200,${isBottom ? 0 : 60} 
+            d={`M0,${isBottom ? 10 : 50} 
+                Q150,${isBottom ? 5 : 55} 300,${isBottom ? 10 : 50} 
+                T600,${isBottom ? 5 : 55} 
+                T900,${isBottom ? 10 : 50} 
+                T1200,${isBottom ? 5 : 55} 
                 V${isBottom ? 60 : 0} H0 Z`}
             fill="url(#topWaveGradient)" 
           />
           
-          {/* Middle wave - 25% transparent - smoother curve */}
+          {/* Middle wave - 25% transparent - water-like wave */}
           <path 
-            d={`M0,${isBottom ? 15 : 45} 
-                C180,${isBottom ? 25 : 35} 360,${isBottom ? 40 : 20} 600,${isBottom ? 30 : 30} 
-                C840,${isBottom ? 40 : 20} 1020,${isBottom ? 25 : 35} 1200,${isBottom ? 15 : 45} 
+            d={`M0,${isBottom ? 20 : 40} 
+                Q200,${isBottom ? 15 : 45} 400,${isBottom ? 20 : 40} 
+                T800,${isBottom ? 15 : 45} 
+                T1200,${isBottom ? 20 : 40} 
                 V${isBottom ? 60 : 0} H0 Z`}
             fill="url(#middleWaveGradient)" 
           />
           
-          {/* Bottom wave - 0% transparent - more natural flow */}
+          {/* Bottom wave - 0% transparent - water-like wave */}
           <path 
             d={`M0,${isBottom ? 35 : 25} 
-                C150,${isBottom ? 25 : 35} 350,${isBottom ? 45 : 15} 600,${isBottom ? 35 : 25} 
-                C850,${isBottom ? 45 : 15} 1050,${isBottom ? 25 : 35} 1200,${isBottom ? 35 : 25} 
+                Q150,${isBottom ? 30 : 30} 300,${isBottom ? 35 : 25} 
+                T600,${isBottom ? 30 : 30} 
+                T900,${isBottom ? 35 : 25} 
+                T1200,${isBottom ? 30 : 30} 
                 V${isBottom ? 60 : 0} H0 Z`}
             fill="url(#bottomWaveGradient)" 
           />

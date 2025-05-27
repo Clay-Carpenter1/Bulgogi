@@ -4,6 +4,7 @@ import NavigationMenu from './NavigationMenu';
 import BackToTopButton from './BackToTopButton';
 import Link from 'next/link';
 import WhiteSplatter from '@/components/WhiteSplatter';
+import FadeIn from '@/components/animations/FadeIn';
 
 interface MenuItem {
   name: string;
@@ -228,20 +229,23 @@ export default function Menu() {
       <section className="relative h-[70vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
-            src="/images/MenuImg.png"
+            src="/images/bulgogi-hero.jpg"
             alt="Korean dishes spread"
             fill
             className="object-cover brightness-[0.85]"
             priority
           />
+          <div className="absolute inset-0 bg-black opacity-30"></div>
         </div>
-        <div className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4">
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
-            <div className="mb-2 sm:mb-4">Our Menu</div>
-            <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
-              Korean Flavors
-            </div>
-          </h1>
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <FadeIn className="px-4 w-full -translate-y-12" duration={1.2}>
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none text-white [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+              <div className="mb-2 sm:mb-4">Our Menu</div>
+              <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
+                Korean Flavors
+              </div>
+            </h1>
+          </FadeIn>
         </div>
 
         {/* Bottom White Diagonal */}
@@ -251,7 +255,7 @@ export default function Menu() {
       </section>
 
       {/* Menu Content */}
-      <section className="relative -mt-6 z-40 bg-white py-16 sm:py-32 px-4">
+      <section className="relative -mt-12 z-40 bg-white py-8 sm:py-16 px-4">
         <WhiteSplatter className="top-1/3 right-0" zIndex={5} opacity={0.2} />
         <WhiteSplatter className="bottom-1/4 -left-32" zIndex={5} opacity={0.15} invert={true} />
         

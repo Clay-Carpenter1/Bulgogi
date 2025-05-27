@@ -15,7 +15,7 @@ export default function About() {
       <WhiteSplatter className="top-[150vh] -left-32" zIndex={1} opacity={0.2} />
       
       {/* Hero Section */}
-      <section className="relative h-[70vh] overflow-hidden mt-24">
+      <section className="relative h-[80vh] overflow-hidden mt-24">
         <div className="absolute inset-0">
           <Image
             src="/images/MenuImg.png"
@@ -27,14 +27,16 @@ export default function About() {
         </div>
         
         {/* Hero Text Overlay */}
-        <FadeIn className="relative h-full flex flex-col justify-center items-center text-white z-20 px-4" duration={1.2}>
-          <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
-            <div className="mb-2 sm:mb-4">Our Story</div>
-            <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
-              Authentic Korean
-            </div>
-          </h1>
-        </FadeIn>
+        <div className="absolute inset-0 flex items-center justify-center z-20">
+          <FadeIn className="px-4 w-full -translate-y-12" duration={1.2}>
+            <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase text-center leading-none text-white [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
+              <div className="mb-2 sm:mb-4">Our Story</div>
+              <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
+                Authentic Korean
+              </div>
+            </h1>
+          </FadeIn>
+        </div>
 
         {/* Bottom Red Diagonal with Wave Pattern */}
         <WavePattern 
