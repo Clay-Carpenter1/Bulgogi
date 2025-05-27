@@ -16,11 +16,8 @@ export default function NavigationMenu({ sectionNames }: NavigationMenuProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if buttons are out of view
-      if (buttonContainerRef.current) {
-        const rect = buttonContainerRef.current.getBoundingClientRect();
-        setShowDropdown(window.scrollY > 300);
-      }
+      // Show/hide dropdown based on scroll position
+      setShowDropdown(window.scrollY > 300);
 
       // Find current section
       const sections = document.querySelectorAll('section[id]');
@@ -30,19 +27,28 @@ export default function NavigationMenu({ sectionNames }: NavigationMenuProps) {
       const navHeight = navRef.current?.offsetHeight || 0;
       const scrollThreshold = 200 + navHeight; // Adjust this value as needed
       
+      // Find the closest section to viewport
+      let bestSectionId = '';
+      let bestDistance = Infinity;
+
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
-        // Expanded detection zone for better section tracking
-        if (rect.top <= scrollThreshold && rect.bottom >= navHeight) {
+        const distance = Math.abs(rect.top - navHeight);
+        const sectionId = section.getAttribute('id') || '';
+        
+        // If this section is close to the nav
+        if (rect.top <= scrollThreshold && rect.bottom >= navHeight && distance < bestDistance && sectionId) {
           foundSection = true;
-          if (currentSection !== section.id) {
-            setCurrentSection(section.id);
-            setLastActiveSection(section.id);
-          }
+          bestSectionId = sectionId;
+          bestDistance = distance;
         }
       });
 
-      if (!foundSection && lastActiveSection && currentSection !== lastActiveSection) {
+      // Always update the current section for continuous feedback
+      if (foundSection && bestSectionId) {
+        setCurrentSection(bestSectionId);
+        setLastActiveSection(bestSectionId);
+      } else if (!foundSection && lastActiveSection) {
         setCurrentSection(lastActiveSection);
       }
     };
@@ -50,19 +56,22 @@ export default function NavigationMenu({ sectionNames }: NavigationMenuProps) {
     // Initial call to set the current section
     setTimeout(() => {
       handleScroll();
-    }, 500); // Delay to ensure DOM is ready
+    }, 300); // Shorter delay to ensure faster initial response
     
-    window.addEventListener('scroll', handleScroll);
+    // Use passive event listener for better scroll performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentSection, lastActiveSection]);
+  }, [lastActiveSection]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      // Update current section immediately for better UX
+      // Update section immediately
       setCurrentSection(sectionId);
       setLastActiveSection(sectionId);
+      
+      // Smooth scroll to section
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -74,14 +83,14 @@ export default function NavigationMenu({ sectionNames }: NavigationMenuProps) {
 
   return (
     <>
-      {/* Fixed dropdown that appears when scrolling - now with improved styling and animation */}
+      {/* Fixed dropdown that appears when scrolling - now full width */}
       <div 
         className={`fixed left-0 right-0 z-50 px-4 transition-opacity duration-300 ${
           showDropdown ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`} 
         style={{ top: '96px' }}
       >
-        <div className="max-w-3xl mx-auto bg-white rounded-lg shadow-xl border-2 border-[#A9190F] p-3 transform transition-transform duration-300 origin-top">
+        <div className="w-full bg-white rounded-lg shadow-xl border-2 border-[#A9190F] p-3 transform transition-transform duration-300 origin-top">
           <select
             value={currentSection}
             onChange={(e) => scrollToSection(e.target.value)}
@@ -97,7 +106,7 @@ export default function NavigationMenu({ sectionNames }: NavigationMenuProps) {
         </div>
       </div>
 
-      {/* Main navigation with section indicator */}
+      {/* Main navigation with buttons only */}
       <div ref={navRef} className="sticky top-0 z-40 mt-4">
         <div className="bg-white rounded-xl shadow-xl overflow-hidden">
           {/* Regular Navigation Buttons */}
@@ -117,16 +126,6 @@ export default function NavigationMenu({ sectionNames }: NavigationMenuProps) {
                 </button>
               ))}
             </div>
-          </div>
-
-          {/* Current Section Indicator */}
-          <div 
-            className="py-3 text-center border-t-2 border-b-2 border-gray-200"
-            style={{ backgroundColor: '#A9190F', color: 'white' }}
-          >
-            <p className="text-base sm:text-lg font-bold">
-              Currently viewing: <span className="underline">{getCurrentSectionName()}</span>
-            </p>
           </div>
         </div>
       </div>

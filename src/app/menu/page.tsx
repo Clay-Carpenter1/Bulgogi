@@ -21,7 +21,7 @@ interface MenuSectionProps {
 
 function MenuSection({ id, title, items, isBestSeller }: MenuSectionProps) {
   return (
-    <section id={id} className="mb-12 sm:mb-16 scroll-mt-24">
+    <section id={id} className="mb-12 sm:mb-16 scroll-mt-32">
       <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
         <h2 className="text-2xl sm:text-3xl font-bold" style={{ color: theme.colors.primary }}>
           {title}
@@ -257,7 +257,7 @@ export default function Menu() {
         
         <div className="max-w-7xl mx-auto">
           {/* Navigation Menu */}
-          <div>
+          <div className="mb-6">
             <NavigationMenu sectionNames={Object.entries(sectionNames)} />
           </div>
 
@@ -270,7 +270,7 @@ export default function Menu() {
               <MenuSection id="rice" title="Bulgogi Rice Bowl" items={menuData.riceBowls} isBestSeller={true} />
             </div>
             <div>
-              <MenuSection id="kimchi-rice" title="Bulgogi Kimchi Fried Rice" items={menuData.kimchiRice}  />
+              <MenuSection id="kimchi-rice" title="Bulgogi Kimchi Fried Rice" items={menuData.kimchiRice} />
             </div>
             <div>
               <MenuSection id="noodles" title="Bulgogi Stir Fried Noodle Bowl" items={menuData.noodleBowls} isBestSeller={true} />
