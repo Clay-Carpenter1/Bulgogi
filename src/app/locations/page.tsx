@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaClock, FaPhoneAlt, FaCar } from 'react-icons/fa';
 import BackToTopButton from '../menu/BackToTopButton';
 import AnimatedSection from '@/components/animations/AnimatedSection';
 import FadeIn from '@/components/animations/FadeIn';
+import AutoFadeIn from '@/components/animations/AutoFadeIn';
 import WhiteSplatter from '@/components/WhiteSplatter';
 import WavePattern from '@/components/WavePattern';
 
@@ -29,14 +30,14 @@ export default function Locations() {
         
         {/* Hero Text Overlay */}
         <div className="absolute inset-0 flex items-center z-20">
-          <FadeIn className="px-16 sm:px-32 md:px-40 w-full translate-y-8" duration={1.2}>
+          <AutoFadeIn className="px-16 sm:px-32 md:px-40 w-full translate-y-8" duration={1.2}>
             <h1 className="text-5xl sm:text-7xl md:text-9xl font-black tracking-tight uppercase leading-none text-white [text-shadow:_4px_4px_8px_rgba(0,0,0,0.5)]">
               <div className="mb-2 sm:mb-4">Visit Us</div>
               <div className="text-red-600 [text-shadow:_2px_2px_0px_#fff,_4px_4px_8px_rgba(0,0,0,0.4)]">
                 In Conway
               </div>
             </h1>
-          </FadeIn>
+          </AutoFadeIn>
         </div>
 
         {/* Bottom Red Diagonal with Wave Pattern */}
